@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RefresherService } from './../services/refresher.service';
+import { AccountService } from './../util/account-service';
+import { AuthService } from './../services/auth.service';
+import { UserService } from './../services/users.service';
 import { HomePage} from '../pages/home/home';
 import { CoursePage} from '../pages/course/course';
 import { CourseListPage} from '../pages/courseList/courseList';
@@ -33,7 +37,10 @@ import { NavComponent } from '../app/navbar/navbar.component';
     HttpModule,
     routes
   ],
-  providers: [],
+  providers: [ AuthService,
+    UserService,
+    AccountService,
+    RefresherService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

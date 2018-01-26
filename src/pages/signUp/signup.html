@@ -4,24 +4,32 @@
             <h3 > Get started with a free account</h3>
             <hr class="my-4">
             <div class="form-group">
+                <label for="pUserName">User Name </label>
+                <input type="text" class="form-control" id="pUserName" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
+                </div>
+            <div class="form-group">
                 <label for="pFirstName">First Name </label>
-                <input type="email" class="form-control" id="pFirstName">
+                <input type="text" class="form-control" id="pFirstName" [(ngModel)]="firstname" [ngModelOptions]="{standalone: true}">
                 </div>
                 <div class="form-group">
                     <label for="pLastName">Last name </label>
-                    <input type="email" class="form-control" id="pLastName">
+                    <input type="text" class="form-control" id="pLastName" [(ngModel)]="lastname" [ngModelOptions]="{standalone: true}">
                     </div>
+                  <div class="form-group">
+                <label for="pStudentId">Student Id </label>
+                <input type="number" class="form-control" id="pstudentId" [(ngModel)]="studentId" [ngModelOptions]="{standalone: true}">
+                </div>
             <div class="form-group">
             <label for="pEmailInput">Email </label>
-            <input type="email" class="form-control" id="pEmailInput">
+            <input type="email" class="form-control" id="pEmailInput" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
             </div>
           <div class="form-group">
             <label for="pPsswdInput">Password</label>
-            <input type="password" class="form-control" id="pPsswdInput">
+            <input type="password" class="form-control" id="pPsswdInput" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
           </div>
           <hr class="my-4">
           <div class="card-footer text-muted">
-            <h6><button type="submit" class="btn btn-primary">Submit</button></h6>
+            <h6><button type="submit" class="btn btn-primary" (click)="signUp()">Submit</button></h6>
           </div>
           
         </fieldset>
