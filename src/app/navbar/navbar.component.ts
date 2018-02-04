@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AccountService} from 'util/account-service';
 
 @Component({
    selector: 'navbar',
@@ -8,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit{
  
-  constructor() {}
+  constructor(private accountSvc: AccountService) 
+  {}
+
+  isLoggedIn()
+  {
+    return this.accountSvc.isLoggedIn();
+  }
 
   ngOnInit() {}
 }

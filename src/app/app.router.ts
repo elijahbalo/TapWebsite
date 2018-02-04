@@ -10,7 +10,7 @@ import {SignUpPage} from '../pages/signUp/signUp';
 import {StudentListPage} from '../pages/studentList/studentList';
 import {StudentPage} from '../pages/student/student';
 import {AccountPage} from '../pages/account/account';
-import { NavComponent } from '../app/navbar/navbar.component';
+import { NavComponent } from '../app/navbar/navbar.component'
 
 export const router: Routes = [
      {path: '', redirectTo: 'home', pathMatch: 'full'}, 
@@ -23,6 +23,7 @@ export const router: Routes = [
      {path: 'courseListPage', component: CourseListPage},
      {path: 'accountPage', component: AccountPage},
      {path: 'navComponent', component: NavComponent},
+
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);

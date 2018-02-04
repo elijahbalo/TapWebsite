@@ -12,8 +12,12 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class UserService {
+  private loggedIn =false;
   // Resolve HTTP using the constructor
-  constructor(private http: Http, private authService: AuthService, private accountService: AccountService) { }
+  constructor(private http: Http, private authService: AuthService, private accountService: AccountService) { 
+    this.loggedIn = !!localStorage.getItem('auth_token');
+
+  }
   // private instance variable to hold base url
   private Url = UrlProvider.url + '/api/users/';
 
@@ -81,5 +85,24 @@ export class UserService {
         return res.json;
       })
       .catch((error: any) => Observable.throw(error || 'Server error'));
+  }
+
+  login(username, password) {
+    return this.http
+      .post(
+        '/login', 
+        { username, password }
+      )
+      .map((res: any) => {
+        if (res.success) {
+          localStorage.setItem('auth_token', res.auth_token);
+          this.loggedIn = true;
+        }
+
+        return res.success;
+      });
+  }
+  isLoggedIn() {
+    return this.loggedIn;
   }
 }
