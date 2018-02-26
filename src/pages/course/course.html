@@ -54,8 +54,8 @@
     <div class="card-body" style="text-align:center">
         <p class="card-subtitle text-muted">Attendance system:</p>
         <br>
-        <button type="attendance_off_btn" class="btn btn-outline-primary">OFF</button>
-        <button type="attendance_on_btn" class="btn btn-outline-primary">ON</button>
+        <button type="attendance_off_btn" class="btn btn-outline-primary" (click)="disableAttendance()">OFF</button>
+        <button type="attendance_on_btn" class="btn btn-outline-primary" (click)="enableAttendance()">ON</button>
       </div>
       
     <div class="form-group">

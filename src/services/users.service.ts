@@ -19,7 +19,7 @@ export class UserService {
 
   }
   // private instance variable to hold base url
-  private Url = UrlProvider.url + '/api/users/';
+  private Url = UrlProvider.url + '/api/users';
 
   // Fetch all existing IDs and Secrets
   getUsers(): Observable<any> {
@@ -57,6 +57,26 @@ export class UserService {
       .map((res: Response) => res.json());
   }
 
+  enableAttendance() {
+    let token = localStorage.getItem('user-token');
+    let head = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+    return this.http.post(this.Url + '/enable/' , { headers: head })
+      .map((res: Response) => res.json());
+  }
+
+  disableAttendance() {
+    let token = localStorage.getItem('user-token');
+    let head = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+    return this.http.post(this.Url + '/disable/' , { headers: head })
+      .map((res: Response) => res.json());
+  }
+ 
 
   signUp(username, password, firstname, lastname, studentId, email): Observable<Response> {
     let data = {
