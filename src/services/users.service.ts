@@ -117,12 +117,21 @@ export class UserService {
         if (res.success) {
           localStorage.setItem('auth_token', res.auth_token);
           this.loggedIn = true;
+          console.log("login successful 2")
         }
 
         return res.success;
       });
   }
+  
   isLoggedIn() {
     return this.loggedIn;
+  }
+  
+  logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('auth_token');
+    this.loggedIn = false;
+    console.log("logout successful")
   }
 }

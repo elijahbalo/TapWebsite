@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AccountService} from 'util/account-service';
+import {UserService} from 'services/users.service';
 
 @Component({
    selector: 'navbar',
@@ -9,7 +10,7 @@ import {AccountService} from 'util/account-service';
 })
 export class NavComponent implements OnInit{
  
-  constructor(private accountSvc: AccountService) 
+  constructor(private accountSvc: AccountService, private userService: UserService) 
   {}
 
   isLoggedIn()
@@ -17,5 +18,11 @@ export class NavComponent implements OnInit{
     return this.accountSvc.isLoggedIn();
   }
 
+  logout() {
+    return this.accountSvc.logout();
+    // remove user from local storage to log user out
+    
+}
   ngOnInit() {}
+
 }

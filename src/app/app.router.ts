@@ -7,7 +7,7 @@ import { CoursePage} from '../pages/course/course';
 import { CourseListPage} from '../pages/courseList/courseList';
 import {SignInPage} from '../pages/signIn/signIn';
 import {SignUpPage} from '../pages/signUp/signUp';
-import {StudentListPage} from '../pages/studentList/studentList';
+import {SettingsPage} from '../pages/settings/settings';
 import {StudentPage} from '../pages/student/student';
 import {AccountPage} from '../pages/account/account';
 import { NavComponent } from '../app/navbar/navbar.component'
@@ -19,7 +19,7 @@ export const router: Routes = [
      {path: 'signIn', component: SignInPage},
      {path: 'signUp', component: SignUpPage},
      {path: 'studentPage', component: StudentPage},
-     {path: 'studentListPage', component: StudentListPage},
+     {path: 'settingsPage', component: SettingsPage},
      {path: 'courseListPage', component: CourseListPage},
      {path: 'accountPage', component: AccountPage},
      {path: 'navComponent', component: NavComponent},

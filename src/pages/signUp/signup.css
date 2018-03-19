@@ -2,3 +2,8 @@
     font-family: "Caviar-Dreams";
     src: url("/Users/tobisitu/Documents/TapWebsite/TapWebsite/src/assets/styles/Caviar-Dreams/CaviarDreams.ttf") format("ttf")
   }
+  h3
+{
+    text-align: center;
+    padding: 20px;
+}

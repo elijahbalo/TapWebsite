@@ -13,9 +13,8 @@
         <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 39px, 0px); top: 0px; left: 0px; will-change: transform;">
           <a class="dropdown-item" href="accountPage">My Profile</a>
           <a class="dropdown-item" href="courseListPage">My Courses</a>
-          <a class="dropdown-item" href="home">Settings</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Log Out</a>
+          <a class="dropdown-item" href="home" (click) = "logout()" >Log Out</a>
         </div>
       </li>
       <li *ngIf="!isLoggedIn()" class="nav-item dropdown">
@@ -23,9 +22,8 @@
         <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 39px, 0px); top: 0px; left: 0px; will-change: transform;">
           <a class="dropdown-item" href="accountPage">My Profile</a>
           <a class="dropdown-item" href="courseListPage">My Courses</a>
-          <a class="dropdown-item" href="home">Settings</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Log Out</a>
+          <a class="dropdown-item" href="home" >Log Out</a>
         </div>
       </li>
       <li class="nav-item">

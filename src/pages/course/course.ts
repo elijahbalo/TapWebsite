@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../services/users.service';
 import { RefresherService} from './../../services/refresher.service';
+import { Router } from '@angular/router';
 
 @Component({
    selector: 'page-course',
   templateUrl: 'course.html',
   styleUrls: ['./course.css']
 })
-export class CoursePage {
+export class CoursePage  {
   enabled = false;
  constructor(
     private userService: UserService,
-    private refresherService: RefresherService
+    private refresherService: RefresherService,
+    private router: Router
     
   ) { }
 enableAttendance(){
@@ -29,4 +31,9 @@ console.log(response)
 console.log(err) 
 })
 }
+createAttendance() {
+  
+    this.router.navigateByUrl('settingsPage')
+  }
+
 }
