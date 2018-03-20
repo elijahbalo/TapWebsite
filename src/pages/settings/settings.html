@@ -1,0 +1,40 @@
+<div class="jumbotron" >
+    <div >
+        <h1  style="text-align:center"> Settings </h1>
+
+
+
+        <div class="alert alert-dismissible alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4 class="alert-heading">Warning!</h4>
+            <p class="mb-0">If no time is chosen from the drop down list above, system is automatically disabled after 2 hours .</p>
+        </div>
+        <div >
+            <br>
+            <br>
+            <p class="card-subtitle text-muted">Turn off/on TapAttend system now: 
+            <button type="attendance_off_btn" class="btn btn-outline-primary" (click)="disableAttendance()">OFF</button>
+            <button type="attendance_on_btn" class="btn btn-outline-primary" (click)="enableAttendance()">ON</button> </p>
+        </div>
+        <br>
+        <br>
+
+        <div class="form-group">
+            <label for="exampleSelect1">Attendance timer:</label>
+            <select class="form-control" id="attendanceTimerSelect">
+                <option>select from list</option>
+                <option>no timer</option>
+                <option>15 mins</option>
+                <option>30 mins</option>
+                <option>45 mins</option>
+                <option>60 mins</option>
+                <option>2hrs 30 minutes</option>
+                <option>3hrs</option>
+            </select>
+            <br>
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+            <h3><button type="submit" class="btn btn-primary" (click)="startNewAttendance()" >Done</button></h3>
+          </div>
+</div>
