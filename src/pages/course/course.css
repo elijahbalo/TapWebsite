@@ -21,3 +21,15 @@ row:after {
     display: table;
     clear: both;
 }
+.time {
+    float:right;
+    
+   
+
+}
+
+.icon{
+     width: 20px;
+
+    height: 20px;
+}

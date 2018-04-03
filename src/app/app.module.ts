@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RefresherService } from './../services/refresher.service';
+import { AttendanceService} from './../services/attendance.service';
+import { CourseService} from './../services/course.service';
 import { AccountService } from './../util/account-service';
 import { AuthService } from './../services/auth.service';
 import { UserService } from './../services/users.service';
 import { HomePage} from '../pages/home/home';
 import { CoursePage} from '../pages/course/course';
 import { CourseListPage} from '../pages/courseList/courseList';
+import { AttendancePage} from '../pages/attendance/attendance';
 import {SignInPage} from '../pages/signIn/signIn';
 import {SignUpPage} from '../pages/signUp/signUp';
 import {SettingsPage} from '../pages/settings/settings';
@@ -27,6 +30,7 @@ import { NavComponent } from '../app/navbar/navbar.component'
     SignInPage,
     SignUpPage,
     SettingsPage,
+    AttendancePage,
     StudentPage,
     AccountPage,
     NavComponent
@@ -39,6 +43,8 @@ import { NavComponent } from '../app/navbar/navbar.component'
   ],
   providers: [ AuthService,
     UserService,
+    AttendanceService,
+    CourseService,
     AccountService,
     RefresherService],
   bootstrap: [AppComponent]

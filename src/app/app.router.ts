@@ -1,6 +1,6 @@
 import {ModuleWithProviders} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { AttendancePage} from '../pages/attendance/attendance';
 import { AppComponent } from './app.component';
 import { HomePage} from '../pages/home/home';
 import { CoursePage} from '../pages/course/course';
@@ -15,8 +15,9 @@ import { NavComponent } from '../app/navbar/navbar.component'
 export const router: Routes = [
      {path: '', redirectTo: 'home', pathMatch: 'full'}, 
      {path: 'home', component: HomePage},
-     {path: 'course', component: CoursePage},
+     {path: 'course/:id', component: CoursePage},
      {path: 'signIn', component: SignInPage},
+     {path: 'attendance/:courseId/:id', component: AttendancePage},
      {path: 'signUp', component: SignUpPage},
      {path: 'studentPage', component: StudentPage},
      {path: 'settingsPage', component: SettingsPage},

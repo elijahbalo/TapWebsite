@@ -53,7 +53,7 @@ export class UserService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.get(this.Url + '/userinfo/' + id, { headers: head })
+    return this.http.get(this.Url + '/attendance/' + id, { headers: head })
       .map((res: Response) => res.json());
 
   }
@@ -69,13 +69,19 @@ export class UserService {
       .map((res: Response) => res.json());
   }
 
-  enableAttendance() {
+  enableAttendance(courseId, attendanceId) {
+       let data = {
+      "courseId": courseId,
+      "attendanceId": attendanceId
+    }
+
+    let body = JSON.stringify(data);
     let token = localStorage.getItem('user-token');
     let head = new Headers({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.post(this.Url + '/enable/' , { headers: head })
+    return this.http.post(this.Url + '/enable/' ,body, { headers: head })
       .map((res: Response) => res.json());
   }
 
@@ -89,6 +95,16 @@ export class UserService {
       .map((res: Response) => res.json());
   }
  
+   testAttendance(courseId, attendanceId) {
+    let token = localStorage.getItem('user-token');
+    let num = '7309156';
+    let head = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+    return this.http.post(this.Url + '/course/'+ courseId + '/attendance/' + attendanceId + '/user/' +num, { headers: head })
+      .map((res: Response) => res.json());
+  }
 
   signUp(username, password, firstname, lastname, studentId, email): Observable<Response> {
     let data = {

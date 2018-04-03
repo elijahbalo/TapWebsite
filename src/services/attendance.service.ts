@@ -12,18 +12,20 @@ export class AttendanceService {
   // Resolve HTTP using the constructor
   constructor(private http: Http, private authService: AuthService) { }
   // private instance variable to hold base url
-  private Url = UrlProvider.url + '/api/attendance';
+  private Url = UrlProvider.url + '/api/attendances';
 
-  createAttendance(number): Observable<any> {
+  createAttendance(id,date,time): Observable<any> {
     //pass the parameter to the data properties
     let data = {
-      "number": number
+      "id": id,
+      "date":date,
+      "time":time
     }
 
     //place data object in readable JSON format to be sent to the server
     let body = JSON.stringify(data);
 
-    return this.http.post(this.Url, body, this.getHeaders())
+    return this.http.post(this.Url + '/', body, this.getHeaders())
       // call json to the response object
       .map((res) => res.json())
       // handle errors if any

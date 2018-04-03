@@ -8,35 +8,15 @@
   <table class="table table-striped table-hover table-bordered">
           <thead class="thead-dark">
             <tr>
-              <th>ID</th>
               <th>Dated Attendance</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td> 
-                1  
+            <tr *ngFor="let list of lists" >
+              <td>
+                 <a href = "javascript:;" (click)="navigateToAttendance(list.id)">{{list.date}} </a>
+                 <span class="time"><a href="javascript:;" (click)="enableAttendance(list.id)"><img class="icon"  src="./../../assets/images/plus.png"></a></span>
               </td>
-              <td>
-                 <a href = "#"> 25/02/2018 </a>
-              </td>
-            </tr>
-          
-            <tr>
-              <td>
-                  2
-              </td>
-              <td>
-                  <a href = "#"> 18/02/2018 </a>
-                </td>
-             </tr>
-            <tr >
-              <td>
-                  3
-                </td>
-              <td>
-                  <a href ="#"> 15/02/2018 </a>
-                </td>
             </tr>
             
           </tbody>
