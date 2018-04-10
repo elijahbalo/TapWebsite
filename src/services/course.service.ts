@@ -20,6 +20,12 @@ export class CourseService {
       .map((res: Response) => res.json());
   }
 
+  
+
+  populateCourses(userId, courseId){
+    return this.http.post(this.Url + '/user/' + userId + '/course/' +courseId , this.getHeaders())
+      .map((res: Response) => res.json());
+  }
 
   private getHeaders() {
     // create authorization header with token

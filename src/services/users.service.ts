@@ -57,7 +57,26 @@ export class UserService {
       .map((res: Response) => res.json());
 
   }
+    getUserCourses(userId) {
+      let token = localStorage.getItem('user-token');
+    let head = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
 
+    return this.http.get(this.Url + '/' + userId , { headers: head })
+      .map((res: Response) => res.json());
+  }
+
+   populateUsers(userId, courseId){
+      let token = localStorage.getItem('user-token');
+    let head = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+    return this.http.post(this.Url + '/user/' + userId + '/course/' +courseId , { headers: head })
+      .map((res: Response) => res.json());
+  }
   
   getUserInfo(id) {
     let token = localStorage.getItem('user-token');

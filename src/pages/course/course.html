@@ -1,5 +1,5 @@
 <div>
-        <h1>CEG 4912: Computer Engineering Design Project I</h1>
+        <h1>Attendance List</h1>
 </div>
 
 
@@ -10,18 +10,30 @@
             <tr>
               <th>Dated Attendance</th>
             </tr>
+           
           </thead>
-          <tbody>
-            <tr *ngFor="let list of lists" >
+          <tbody *ngFor="let list of lists">
+            <tr >
               <td>
                  <a href = "javascript:;" (click)="navigateToAttendance(list.id)">{{list.date}} </a>
                  <span class="time"><a href="javascript:;" (click)="enableAttendance(list.id)"><img class="icon"  src="./../../assets/images/plus.png"></a></span>
               </td>
+                </tr>
+                <tr>
+                <td id="bar">
+                    <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                  </td>
             </tr>
-            
           </tbody>
         </table>
 </div> 
+      <script>
+        
+        </script>
+
+
 
 <!-- <div class="row column right">
         <table class="table table-striped table-hover table-bordered">
@@ -107,3 +119,4 @@
     </div>
   </div> -->
 </div>
+

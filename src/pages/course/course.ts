@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../services/users.service';
+import { CourseService } from '../../services/course.service';
 import { RefresherService} from './../../services/refresher.service';
 import { AttendanceService} from './../../services/attendance.service';
 import { Router,ActivatedRoute } from '@angular/router';
@@ -16,9 +17,12 @@ export class CoursePage  {
   time:String;
   lists: Attendance[]=[];
   courseId:String;
+  num
+  progress
 
  constructor(
     private userService: UserService,
+    private courseService: CourseService,
     private refresherService: RefresherService,
     private router: Router,
     private route:ActivatedRoute,
@@ -26,7 +30,9 @@ export class CoursePage  {
     
   ) {
     this.courseId= route.snapshot.params['id'];
+    this.num= route.snapshot.params['num']
     console.log(this.courseId)
+    console.log(this.num)
     this.displayAttendanceList()
    }
 enableAttendance(id){
@@ -65,6 +71,12 @@ getTime(){
   return time;
 }
 
+ myFunction(a) {
+    return (a/this.num)*100;
+    //this.progress = prog;
+}
+
+
 createAttendance() {
     this.attendanceService.createAttendance(this.courseId,this.getDate(),this.getTime()
                              ).subscribe(res => {
@@ -96,5 +108,8 @@ createAttendance() {
    navigateToAttendance(id){
       this.router.navigate(["/attendance",this.courseId,id]);
     }
+
+  
+
 
 }

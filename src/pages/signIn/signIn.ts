@@ -25,7 +25,7 @@ username;
       console.log("login successful")
       this.userService.getCurrentUserInfo().subscribe();
       this.refresherService.refresh();
-      this.router.navigateByUrl('/accountPage');
+      this.router.navigateByUrl('/courseListPage');
     }, err => {
       let message = 'Cannot Login';
       if (err === 'invalid_grant') {

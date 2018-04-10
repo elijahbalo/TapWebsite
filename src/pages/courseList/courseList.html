@@ -5,9 +5,13 @@
 </div>
 <div class="list-group">
         <h3 class="list-group-item  list-group-item-action active">
-          Fall 2017
+          COURSES
          </h3>
-            <ul *ngFor="let course of courses"  (click)="navigateToCourse(course.id)" class="list-group" class="list-group-item list-group-item-action"  >
+            <ul *ngFor="let course of courses"  (click)="navigateToCourse(course.id, course.numberOfStudents)" class="list-group" class="list-group-item list-group-item-action"  >
              <a href="javascript:;"> {{course.code}}: {{course.name}}</a>
              </ul>
 </div>
+<!---<div>
+<button type="attendance_off_btn" class="btn btn-outline-primary" (click)="populateCourses()">test</button>
+<button type="attendance_off_btn" class="btn btn-outline-primary" (click)="populateUsers()">test2</button>
+</div> -->

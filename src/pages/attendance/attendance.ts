@@ -13,6 +13,7 @@ import { User} from "../../model/user";
 export class AttendancePage {
   courseId:String;
   attendanceId: String;
+  num
   lists: User[]=[];
 
   constructor( private userService: UserService,
@@ -23,7 +24,9 @@ export class AttendancePage {
 ) {  
   this.attendanceId= route.snapshot.params['id'];
   this.courseId= route.snapshot.params['courseId'];
+  this.num=route.snapshot.params['num'];
   console.log("attendance id: " + this.attendanceId)
+  //console.log("number of students: "+ this.num)
   console.log("course id: " + this.courseId)
    refresherService.refresher.subscribe(a => {
       if (accountService.isLoggedIn()) {

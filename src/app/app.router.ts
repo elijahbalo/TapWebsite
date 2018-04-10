@@ -15,7 +15,7 @@ import { NavComponent } from '../app/navbar/navbar.component'
 export const router: Routes = [
      {path: '', redirectTo: 'home', pathMatch: 'full'}, 
      {path: 'home', component: HomePage},
-     {path: 'course/:id', component: CoursePage},
+     {path: 'course/:id/:num', component: CoursePage},
      {path: 'signIn', component: SignInPage},
      {path: 'attendance/:courseId/:id', component: AttendancePage},
      {path: 'signUp', component: SignUpPage},

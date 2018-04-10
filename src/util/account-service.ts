@@ -12,9 +12,12 @@ export class AccountService {
         return localStorage.getItem('user-token') != null;
     }
     logout() {
-        // remove user from local storage to log user out
-        localStorage.removeItem('auth_token');
-        
+        localStorage.removeItem('user-token');
+    localStorage.removeItem('refresh-token');
+    let userData = localStorage.getItem('userData');
+    if (userData) {
+      localStorage.removeItem('userData')
+    }
       }
       isSignedUp(): boolean {
         return localStorage.getItem('user-token') != null;
