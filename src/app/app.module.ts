@@ -19,7 +19,8 @@ import {StudentPage} from '../pages/student/student';
 import {AccountPage} from '../pages/account/account';
 import { routes} from './app.router';
 import { AppComponent } from './app.component';
-import { NavComponent } from '../app/navbar/navbar.component'
+import { NavComponent } from '../app/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NavComponent } from '../app/navbar/navbar.component'
     AttendancePage,
     StudentPage,
     AccountPage,
-    NavComponent
+    NavComponent,
+    AttendancePage
   ],
   imports: [
     BrowserModule,
